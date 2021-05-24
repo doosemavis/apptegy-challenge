@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_201929) do
   create_table "recipients", force: :cascade do |t|
     t.string "name"
     t.string "address"
+    t.integer "school_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

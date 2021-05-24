@@ -22,6 +22,8 @@
       <ul class="navbar-nav">
         <li class="nav-item"><%= link_to "What's New", announcements_path, class: "nav-link #{unread_announcements(current_user)}" %></li>
         <li class="nav-item"><%= link_to "Schools", schools_path, class: "nav-link" %></li>
+
+        # Need to add dropdown selection list of schools to Recipient index for belongs_to association
         <li class="nav-item"><%= link_to "Recipients", recipients_path, class: "nav-link" %></li>
         
         <% if user_signed_in? %>
