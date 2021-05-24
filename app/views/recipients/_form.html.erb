@@ -1,0 +1,39 @@
+<%= form_with(model: recipient, local: true) do |form| %>
+  <% if recipient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recipient.errors.count, "error") %> prohibited this recipient from being saved:</h2>
+
+      <ul>
+      <% recipient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: 'form-label' %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :address, class: 'form-label' %>
+    <%= form.text_field :address, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <% if recipient.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', recipient, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if recipient.persisted? %>
+      <%= link_to "Cancel", recipient, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", recipients_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

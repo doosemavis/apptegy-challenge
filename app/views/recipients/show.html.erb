@@ -1,0 +1,16 @@
+<div class="page-header">
+  <%= link_to recipients_path, class: 'btn btn-default' do %>
+    All Recipients
+  <% end %>
+  <%= link_to edit_recipient_path(@recipient), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show recipient</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @recipient.name %></dd>
+  <dt>Address:</dt>
+  <dd><%= @recipient.address %></dd>
+</dl>
