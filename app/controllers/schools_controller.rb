@@ -4,10 +4,13 @@ class SchoolsController < ApplicationController
   # GET /schools or /schools.json
   def index
     @schools = School.all
+    render json: @schools
   end
 
   # GET /schools/1 or /schools/1.json
   def show
+    @school = School.find_by(id: params[:id])
+    render json: @school
   end
 
   # GET /schools/new
