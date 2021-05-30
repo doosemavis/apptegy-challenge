@@ -31,9 +31,9 @@
     <%= form.submit class: 'btn btn-primary' %>
 
     <% if recipient.persisted? %>
-      <%= link_to "Cancel", recipient, class: "btn btn-link" %>
+      <%= link_to "Cancel", recipient, class: "btn btn-primary" %>
     <% else %>
-      <%= link_to "Cancel", recipients_path, class: "btn btn-link" %>
+      <%= link_to "Cancel", recipients_path, class: "btn btn-primary" %>
     <% end %>
   </div>
 <% end %>
