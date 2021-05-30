@@ -28,6 +28,10 @@
       </div>
     <% end %>
 
+    <div class="mb-3">
+        <%= collection_select( :recipient, :school_id, School.all, :id, :name, prompt: 'Please select School') %>
+    </div>
+
     <%= form.submit class: 'btn btn-primary' %>
 
     <% if recipient.persisted? %>
