@@ -9,6 +9,7 @@ class RecipientsController < ApplicationController
 
   # GET /recipients/1 or /recipients/1.json
   def show
+    @school = School.find_by(id: params[:id])
   end
 
   # GET /recipients/new
@@ -65,6 +66,6 @@ class RecipientsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def recipient_params
-      params.require(:recipient).permit(:name, :address, :school_id)
+      params.require(:recipient).permit(:name, :address, :school_id, school_attributes:  [:name, :address] )
     end
 end

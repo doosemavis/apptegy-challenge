@@ -35,6 +35,9 @@
           
 
                       <td><%= recipient.address %></td>
+                      <td>
+                        <%= link_to 'Delete', recipient, method: :delete, class: "btn btn-primary", data: { confirm: 'Are you sure?' } %> 
+                      </td>
           
           
         <% end %>

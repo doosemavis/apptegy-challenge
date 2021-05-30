@@ -1,5 +1,5 @@
 <div class="page-header">
-  <%= link_to recipients_path, class: 'btn btn-default' do %>
+  <%= link_to recipients_path, class: 'btn btn-primary' do %>
     All Recipients
   <% end %>
   <%= link_to edit_recipient_path(@recipient), class: 'btn btn-primary' do %>
@@ -13,4 +13,9 @@
   <dd><%= @recipient.name %></dd>
   <dt>Address:</dt>
   <dd><%= @recipient.address %></dd>
+</dl>
+
+<dl>
+  <dt>Recipient's School:</dt>
+  <dd><%= @school.name %></dd>
 </dl>
