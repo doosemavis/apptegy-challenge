@@ -24,16 +24,16 @@
   <div class="mb-3">
     <% if school.persisted? %>
       <div class="float-right">
-        <%= link_to 'Destroy', school, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Destroy', school, method: :delete, class: "btn btn-primary", data: { confirm: 'Are you sure?' } %>
       </div>
     <% end %>
 
     <%= form.submit class: 'btn btn-primary' %>
 
     <% if school.persisted? %>
-      <%= link_to "Cancel", school, class: "btn btn-link" %>
+      <%= link_to "Cancel", school, class: "btn btn-primary" %>
     <% else %>
-      <%= link_to "Cancel", schools_path, class: "btn btn-link" %>
+      <%= link_to "Cancel", schools_path, class: "btn btn-primary" %>
     <% end %>
   </div>
 <% end %>

@@ -4,7 +4,7 @@ class RecipientsController < ApplicationController
   # GET /recipients or /recipients.json
   def index
     @recipients = Recipient.all
-    render json: @recipients
+    # render json: @recipients
   end
 
   # GET /recipients/1 or /recipients/1.json
