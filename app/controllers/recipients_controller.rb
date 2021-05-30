@@ -65,6 +65,6 @@ class RecipientsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def recipient_params
-      params.require(:recipient).permit(:name, :address)
+      params.require(:recipient).permit(:name, :address, :school_id)
     end
 end
