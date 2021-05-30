@@ -20,6 +20,8 @@ class SchoolsController < ApplicationController
 
   # GET /schools/1/edit
   def edit
+    @school = School.find_by(id: params[:id])
+    # render :edit
   end
 
   # POST /schools or /schools.json

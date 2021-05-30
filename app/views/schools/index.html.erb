@@ -19,10 +19,8 @@
       <tr>
     
         <th>Name</th>
-    
-
-            <th>Address</th>
-            <th>Actions </th>
+        <th>Address</th>
+        <th>Actions </th>
             
       </tr>
     </thead>
@@ -33,9 +31,10 @@
           
             <td><%= link_to school.name, school %></td>
           
-
               <td><%= school.address %></td>
-              <td><%= link_to 'Delete', school, class: 'btn btn-primary' %>  </td> 
+              <td>
+                <%= link_to 'Delete', school, method: :delete, class: "btn btn-primary", data: { confirm: 'Are you sure?' } %> 
+              </td>
           
           
         <% end %>
