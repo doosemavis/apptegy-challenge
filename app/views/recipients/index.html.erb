@@ -2,46 +2,46 @@
 
 
 <div class="row">
-  <div class="col-sm-6">
-    <h1>Recipients</h1>
-  </div>
+	<div class="col-sm-6">
+		<h1>Recipients</h1>
+	</div>
 
-  <div class="col-sm-6 text-right">
-  <%= link_to new_recipient_path, class: 'btn btn-primary' do %>
-    Add New Recipient
-  <% end %>
-  </div>
+	<div class="col-sm-6 text-right">
+	<%= link_to new_recipient_path, class: 'btn btn-primary' do %>
+		Add New Recipient
+	<% end %>
+	</div>
 </div>
 
 <div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
-    <thead>
-      <tr>
-    
-        <th>Name</th>
-    
+	<table class="table table-striped table-bordered table-hover">
+		<thead>
+			<tr>
+		
+				<th>Name</th>
+				<th>Address</th>
+				<th>Recipient's School</th>
+				<th>Actions</th>
+						
+			</tr>
+		</thead>
 
-            <th>Address</th>
-            <th>Actions</th>
-            
-      </tr>
-    </thead>
+		<tbody>
+			<% @recipients.each do |recipient| %>
+				<%= content_tag :tr, id: dom_id(recipient), class: dom_class(recipient) do %>
+					
+						<td><%= link_to recipient.name, recipient %></td>
+					
 
-    <tbody>
-      <% @recipients.each do |recipient| %>
-        <%= content_tag :tr, id: dom_id(recipient), class: dom_class(recipient) do %>
-          
-            <td><%= link_to recipient.name, recipient %></td>
-          
-
-                      <td><%= recipient.address %></td>
-                      <td>
-                        <%= link_to 'Delete', recipient, method: :delete, class: "btn btn-primary", data: { confirm: 'Are you sure?' } %> 
-                      </td>
-          
-          
-        <% end %>
-      <% end %>
-    </tbody>
-  </table>
+											<td><%= recipient.address %></td>
+											<td><%= recipient.school.name %></td>
+											<td>
+												<%= link_to 'Delete', recipient, method: :delete, class: "btn btn-primary", data: { confirm: 'Are you sure?  This action cannot be undone.' } %> 
+											</td>
+					
+					
+				<% end %>
+			<% end %>
+		</tbody>
+	</table>
 </div>
