@@ -22,11 +22,6 @@
   </div>
 
   <div class="mb-3">
-    <% if recipient.persisted? %>
-      <div class="float-right">
-        <%= link_to 'Destroy', recipient, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
-      </div>
-    <% end %>
 
     <div class="mb-3">
         <%= collection_select( :recipient, :school_id, School.all, :id, :name, prompt: 'Please Select School') %>
